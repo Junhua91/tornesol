@@ -10,7 +10,6 @@ public abstract class CustomResponseHandler<T> implements ResponseHandler<T> {
     //后续处理response需要的参数
     private String urlsToPush;
 
-    @Override
     public T handleResponse(HttpResponse response) throws IOException {
         return handle(response, urlsToPush);
     }
