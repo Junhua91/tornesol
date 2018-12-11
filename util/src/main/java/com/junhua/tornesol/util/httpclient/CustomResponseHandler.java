@@ -1,4 +1,4 @@
-package com.junhua.tornesol.httpclient;
+package com.junhua.tornesol.util.httpclient;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ResponseHandler;

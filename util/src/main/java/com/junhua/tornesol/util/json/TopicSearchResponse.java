@@ -1,4 +1,4 @@
-package com.junhua.tornesol.json;
+package com.junhua.tornesol.util.json;
 
 import java.util.List;
 
