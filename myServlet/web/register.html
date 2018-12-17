@@ -6,13 +6,24 @@
 </head>
 <body>
 
-<input type="text">用户名
-<input type="password" id="password">请输入密码
-<input type="password" id="conformed_password">请确认密码
+<input type="text" id="username">用户名<br>
+<input type="password" id="password">请输入密码<br>
+<input type="password" id="confirmed_password">请确认密码<br>
 <input type="button" value="注册" id="register_btn">
 
+<script src="jquery-1.12.4.js"></script>
+<script src="common.js"></script>
 <script>
+    $(function () {
+        $('#register_btn').click(function () {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var confirmed_password = $("#confirmed_password").val();
+            var parameter = "username=" + username + "&password=" + password + "&confirmed_password=" + confirmed_password;
+            sendRequest('POST', './register', parameter)
 
+        })
+    })
 </script>
 </body>
 </html>

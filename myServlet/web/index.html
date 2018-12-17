@@ -13,34 +13,19 @@
 <input type="password" id="pwd">密码<br>
 <input type="button" id="btn1" value="登录">
 <a id="pwd_forget">忘记密码</a>
-<a id="register">用户注册</a>
+<a href="register.html">用户注册</a>
 
+<script src="common.js"></script>
 <script>
-
-    function sendRequest(method, uri, parameters) {
-        var xhr = new XMLHttpRequest();
-        xhr.open(method, uri);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.send(`${parameters}`)
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                console.log(this.responseText)
-            }
-        }
-    }
-
-    var userName = document.getElementById('username').value
-    var password = document.getElementById('pwd').value
-    var loginParameter = "userName=" + userName + "&password=" + password;
 
 
     document.getElementById("btn1").onclick = function () {
+        var userName = document.getElementById('username').value;
+        console.log(userName);
+        var password = document.getElementById('pwd').value;
+        var loginParameter = "userName=" + userName + "&password=" + password;
         sendRequest("POST", "./login", loginParameter)
-    }
-
-    document.getElementById("register").onclick = function () {
-
-    }
+    };
 
 </script>
 </body>
