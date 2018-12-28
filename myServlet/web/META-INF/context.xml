@@ -10,5 +10,5 @@
             username="root"
             password="root"
             driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://localhost:3306/test"/>
+            url="jdbc:mysql://localhost:3306/tournesol"/>
 </Context>
