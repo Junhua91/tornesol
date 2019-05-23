@@ -12,5 +12,8 @@
     <modules>
         <module>util</module>
         <module>myServlet</module>
+        <module>mySpringMVC</module>
+        <module>mybatis</module>
+        <module>springBoot</module>
     </modules>
 </project>
