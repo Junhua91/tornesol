@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:drpc="http://www.junhua.com/schema/drpc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.junhua.com/schema/drpc http://www.junhua.com/schema/drpc.xsd" default-lazy-init="false">
+
+    <drpc:reference id="consumerId" interface="com.junhua.rpc.demo.api.IProvider"/>
+
+</beans>

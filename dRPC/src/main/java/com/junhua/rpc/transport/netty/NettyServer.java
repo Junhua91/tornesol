@@ -16,7 +16,13 @@ import io.netty.handler.codec.LengthFieldPrepender;
 /**
  *
  */
-public class NettServer {
+public class NettyServer {
+
+    private final int port;
+
+    public NettyServer(int port) {
+        this.port = port;
+    }
 
     public void bind() {
 
@@ -38,7 +44,7 @@ public class NettServer {
                                 }
                             });
 
-            ChannelFuture future = boot.bind(9500).sync();
+            ChannelFuture future = boot.bind(9700).sync();
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -49,10 +55,5 @@ public class NettServer {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        NettServer server = new NettServer();
-        server.bind();
     }
 }
