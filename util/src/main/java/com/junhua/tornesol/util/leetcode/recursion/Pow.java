@@ -7,6 +7,12 @@ public class Pow {
         return x * pow(x, n - 1);
     }
 
+    /**
+     * 分治
+     * @param x
+     * @param n
+     * @return
+     */
     public static int pow2(int x, int n) {
 
         if (n == 0) return 1;

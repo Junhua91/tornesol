@@ -1,4 +1,4 @@
-package com.junhua.springboot.service;
+package com.junhua.springboot.rabbit_boot.service;
 
 
 import org.slf4j.Logger;

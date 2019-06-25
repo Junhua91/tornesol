@@ -1,7 +1,7 @@
 package com.junhua.rpc.controller;
 
-import com.junhua.rpc.demo.api.AlbumModel;
-import com.junhua.rpc.demo.api.IProvider;
+import com.junhua.rpc.init.ReferenceBean;
+import com.junhua.rpc.init.ServiceBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DRpcController {
 
 
-    @Autowired
-    private IProvider provider;
 
     @RequestMapping("/test")
     public String hello() {
-        AlbumModel album = provider.queryAlbum(123L);
+
         return "hello";
     }
 }

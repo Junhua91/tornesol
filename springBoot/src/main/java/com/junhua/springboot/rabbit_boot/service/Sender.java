@@ -1,6 +1,4 @@
-package com.junhua.springboot.service;
-
-import org.springframework.amqp.core.AmqpTemplate;
+package com.junhua.springboot.rabbit_boot.service;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Sender {
-
     @Autowired
     private RabbitTemplate template;
-
     public void send(String message) {
-
-
-
         //direct 方式
         template.convertAndSend("test_queue", message);
         //topic 方式

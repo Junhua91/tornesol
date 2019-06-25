@@ -1,4 +1,4 @@
-package com.junhua.springboot.config;
+package com.junhua.springboot.rabbit_boot.config;
 
 
 import org.springframework.amqp.core.*;

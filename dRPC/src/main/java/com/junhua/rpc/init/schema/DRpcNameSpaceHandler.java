@@ -9,6 +9,6 @@ public class DRpcNameSpaceHandler extends NamespaceHandlerSupport {
     @Override
     public void init() {
         registerBeanDefinitionParser("service", new DRpcBeanDefinitionParser(ServiceBean.class, true));
-        registerBeanDefinitionParser("reference", new DRpcBeanDefinitionParser(ReferenceBean.class, false));
+        registerBeanDefinitionParser("reference", new DRpcBeanDefinitionParser(ReferenceBean.class, true));
     }
 }

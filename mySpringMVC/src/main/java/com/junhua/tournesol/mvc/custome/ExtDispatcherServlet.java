@@ -21,7 +21,7 @@ public class ExtDispatcherServlet extends FrameworkServlet {
 
     private void init2() throws ServletException {
 
-        List<Class<?>> classes = ClassUtil.getClasses("main.com.junhua.tournesol.mymvc");
+        List<Class<?>> classes = ClassUtil.getClasses("main.com.junhua.tournesol.mvc");
         try {
             findMVCClasses(classes);
             findHandleMapping();

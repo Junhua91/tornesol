@@ -13,10 +13,6 @@
         </xsd:attribute>
     </xsd:complexType>
     
-    <xsd:complexType name="config_type">
-        <
-    </xsd:complexType>
-
     <xds:complexType name="reference_type">
         <xsd:attribute name="id" type="xsd:ID">
         </xsd:attribute>

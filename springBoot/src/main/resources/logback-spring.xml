@@ -1,0 +1,41 @@
+<configuration debug="false">
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <springProfile name="dev">
+            <file>/logs/tornesol/springboot/development.log</file>
+        </springProfile>
+        <springProfile name="!dev">
+            <file>/logs/tornesol/springboot/prod.log</file>
+        </springProfile>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/logs/tornesol/springboot/development.log.%d</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="FILE"/>
+        </root>
+        <logger name="com.junhua.springboot" level="INFO"/>
+    </springProfile>
+
+    <springProfile name="!dev">
+        <root level="ERROR">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="FILE"/>
+        </root>
+        <logger name="com.junhua.springboot" level="ERROR"/>
+    </springProfile>
+
+</configuration>
