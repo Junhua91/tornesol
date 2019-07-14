@@ -1,9 +1,6 @@
 package com.junhua.tornesol.util.leetcode.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * BFS: 广度优先搜索
@@ -60,16 +57,42 @@ public class LevelOrder {
         find2(root.getRight(), level + 1, result);
     }
 
+    private static void find3(TreeNode root, int level, List<List<Integer>> result) {
+        if (root == null) return;
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+                level++;
+            }
+            if (level > result.size()) {
+                for (int i = result.size(); i < level; i++) {
+                    result.add(new ArrayList<>());
+                }
+            }
+            root = stack.pop();
+            result.get(level - 1).add(root.val);
+            level--;
+            TreeNode right = root.right;
+            if(right!=null)level++;
+            root =right;
+        }
+    }
+
     static public void main(String[] args) {
 
         List<List<Integer>> result = find(TEST_TREE);
         List<List<Integer>> result2 = new ArrayList<>();
+        List<List<Integer>> result3 = new ArrayList<>();
 
         printList(result);
         System.out.println("----------");
 
         find2(TEST_TREE, 0, result2);
+        find3(TEST_TREE, 0, result3);
         printList(result2);
+        printList(result3);
 
     }
 

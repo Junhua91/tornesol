@@ -9,7 +9,8 @@ public class ValidateParanthese {
 
         List<String> result = new ArrayList<>();
 
-        _gen("", 3, 3, result);
+//        _gen("", 3, 3, result);
+        _gen2("", 0, 0, result,3);
 
         result.forEach(p -> System.out.println(p));
 
@@ -23,11 +24,25 @@ public class ValidateParanthese {
         }
 
         if (left > 0) {
-            _gen(sublist + "(", left-1, right, result);
+            _gen(sublist + "(", left -1, right, result);
         }
 
-        if (right > left && right > 0) {
-            _gen(sublist + ")", left, right-1, result);
+        if (right < left && right > 0) {
+            _gen(sublist + ")", left, right - 1, result);
+        }
+
+    }
+
+    public static void _gen2(String subList, int left, int right, List<String> result, int n) {
+        if (left == n && right == n) {
+            result.add(subList);
+            return;
+        }
+
+        if (left < n) _gen2(subList+"(", left + 1, right, result, n);
+
+        if (right < n && right < left) {
+            _gen2(subList+")", left, right + 1, result, n);
         }
 
     }

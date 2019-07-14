@@ -39,4 +39,32 @@ public class ValidParentheses {
         System.out.println(isValid("(])"));
         System.out.println(isValid("()[]{}"));
     }
+
+
+    public static boolean isValid2(String s) {
+
+        if (s == null) return false;
+
+        Map<Character, Character> map = new HashMap<Character, Character>() {{
+            put('}', '{');
+            put(']', '[');
+            put(')', '(');
+        }};
+
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (map.containsKey(c)) {
+                if (stack.isEmpty()) return false;
+                Character top = stack.peek();
+                if (top.equals(map.get(c))) {
+                    stack.pop();
+                } else return false;
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+
+    }
+
 }

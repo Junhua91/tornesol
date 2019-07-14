@@ -1,6 +1,7 @@
 package com.junhua.tornesol.util.leetcode.hash;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Majority {
@@ -29,6 +30,19 @@ public class Majority {
         }
 
         return -1;
+    }
+
+    static public int maj2(List<Integer> nums) {
+
+        int length = nums.size();
+        int mid = length / 2;
+        int left = maj2(nums.subList(0, mid));
+        int right = maj2(nums.subList(mid, length));
+
+        if (left == right) return left;
+
+        return 0;
+
     }
 
 }

@@ -9,6 +9,7 @@ public class Pow {
 
     /**
      * 分治
+     *
      * @param x
      * @param n
      * @return
@@ -39,5 +40,30 @@ public class Pow {
         System.out.print(pow2(2, 30));
         Long end2 = System.currentTimeMillis();
         System.out.println("time takes " + (end2 - start2));
+
+
+        System.out.print(pow4(2, 10));
+    }
+
+    static public int pow3(int x, int n) {
+        if (n == 0) return 1;
+
+        if (n % 2 == 0) {
+            return pow3(x * x, n / 2);
+        } else {
+            return x * pow3(x * x, (n - 1) / 2);
+        }
+    }
+
+    static public int pow4(int x, int n) {
+
+        int pow = 1;
+        while (n > 0) {
+            if (n % 2 == 1) pow *= x;
+            x = x * x;
+            n = n / 2;
+        }
+
+        return pow;
     }
 }

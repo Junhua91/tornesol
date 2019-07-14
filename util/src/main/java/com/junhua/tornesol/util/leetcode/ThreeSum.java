@@ -65,7 +65,39 @@ public class ThreeSum {
             }
             System.out.println();
         }
+
+        List results = threeSum2(nums);
+        System.out.println();
     }
 
+
+    public static List<List<Integer>> threeSum2(int[] nums) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        List<Integer> list = new ArrayList<>();
+        for (int i : nums) {
+            list.add(i);
+        }
+        list.sort((o1, o2) -> o1 - o2);
+
+        for (int i = 0; i < list.size(); i++) {
+            int a = list.get(i);
+            int startIndex = i + 1;
+            int endIndex = list.size() - 1;
+
+            while (startIndex < endIndex) {
+                int data = a + list.get(startIndex) + list.get(endIndex);
+
+                if (data == 0) {
+                    result.add(Arrays.asList(a, list.get(startIndex), list.get(endIndex)));
+                    break;
+                } else if (data > 0) {
+                    endIndex -= 1;
+                } else startIndex++;
+            }
+        }
+        return result;
+    }
 
 }
