@@ -42,7 +42,7 @@ public class SymmetricTree {
 
         TreeNode root2 = new TreeNode(1).setLeft(new TreeNode(2).setLeft(new TreeNode(2)))
                 .setRight(new TreeNode(2).setLeft(new TreeNode(2)));
-        System.out.println(isSymmetric2(root2));
+        System.out.println(isSymmetric2(root));
     }
 
 

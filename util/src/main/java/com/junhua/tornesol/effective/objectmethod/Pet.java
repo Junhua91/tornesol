@@ -1,6 +1,8 @@
 package com.junhua.tornesol.effective.objectmethod;
 
-public class Pet implements Cloneable {
+import java.io.Serializable;
+
+public class Pet implements Cloneable, Serializable {
 
     private String name;
     private String type;

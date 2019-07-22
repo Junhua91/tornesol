@@ -1,6 +1,14 @@
 package com.junhua.tornesol.effective.objectmethod;
 
-public class Person implements Cloneable {
+import java.io.*;
+
+/**
+ * 拷贝方法
+ * #1. Cloneable + clone 方法：注意引用类的拷贝
+ * #2. 序列化方法
+ * #3. 原型工厂类（推荐）, copyConstruct（推荐）
+ */
+public class Person implements Cloneable, Serializable {
 
     private int age;
     private String name;
@@ -100,6 +108,49 @@ public class Person implements Cloneable {
 //        return super.clone();
 //    }
 
+
+    /**
+     * 序列化的方式进行复制
+     *
+     * @return
+     */
+    public Person deepClone() {
+        Person p2 = null;
+        Person p1 = this;
+        PipedOutputStream out = new PipedOutputStream();
+        PipedInputStream in = new PipedInputStream();
+        try {
+            in.connect(out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (
+                ObjectOutputStream bo = new ObjectOutputStream(out);
+                ObjectInputStream bi = new ObjectInputStream(in)
+        ) {
+            bo.writeObject(p1);
+            p2 = (Person) bi.readObject();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return p2;
+
+    }
+
+    /**
+     * Copy Construct
+     *
+     * @param p
+     * @return
+     */
+    public Person Person(Person p) {
+        Person person = new Person(p.getAge(), p.getName());
+        Pet pet = new Pet(p.getPet().getName(), getPet().getType());
+        person.setPet(pet);
+        return person;
+    }
 
     public int getAge() {
         return age;

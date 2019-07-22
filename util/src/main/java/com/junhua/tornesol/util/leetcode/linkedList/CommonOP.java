@@ -25,6 +25,24 @@ public class CommonOP {
     }
 
     /**
+     * 获取中点节点前的一个节点
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode findPreMid(ListNode head) {
+        ListNode pre = head;
+        ListNode slow = head.next;
+        ListNode fast = head.next.next;
+        while (fast != null && fast.next != null) {
+            pre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return pre;
+    }
+
+    /**
      * 删除重复节点
      *
      * @param head
@@ -44,6 +62,12 @@ public class CommonOP {
         return head;
     }
 
+    /**
+     * 反转
+     *
+     * @param head
+     * @return
+     */
     static public ListNode reverse(ListNode head) {
         if (head == null) return null;
         ListNode pre = null;

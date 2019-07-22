@@ -9,7 +9,7 @@ public class SecondMinimumNodeInBT {
         if (root.left == null || root.right == null) return -1;
         min = root.val;
         dfs(root);
-        return secondeMin == Integer.MAX_VALUE ? -1 : secondeMin;
+        return secondeMin == Long.MAX_VALUE ? -1 : secondeMin;
     }
 
 
