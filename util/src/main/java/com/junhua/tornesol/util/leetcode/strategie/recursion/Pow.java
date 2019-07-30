@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.recursion;
+package com.junhua.tornesol.util.leetcode.strategie.recursion;
 
 public class Pow {
 

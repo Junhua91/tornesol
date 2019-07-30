@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.array;
+package com.junhua.tornesol.util.leetcode.datastructure.array;
 
 import java.util.HashMap;
 import java.util.Map;

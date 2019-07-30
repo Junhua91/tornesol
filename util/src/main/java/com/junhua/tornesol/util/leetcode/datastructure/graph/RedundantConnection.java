@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.graph;
+package com.junhua.tornesol.util.leetcode.datastructure.graph;
 
 /**
  *并查集视频讲解：https://www.youtube.com/watch?v=wU6udHRIkcc

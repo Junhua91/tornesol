@@ -1,6 +1,4 @@
-package com.junhua.tornesol.util.leetcode.linkedList;
-
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+package com.junhua.tornesol.util.leetcode.datastructure.linkedList;
 
 import java.util.ArrayList;
 import java.util.List;

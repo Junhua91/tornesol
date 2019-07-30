@@ -2,10 +2,16 @@ package com.junhua.tornesol.effective.classandinterface.nested;
 
 /**
  * nested class 分为以下几类
- * 1. static member nested class
- * 2. member nested class（inner class，不准包含static）
- * 3. local nested class
- * 4. anonymous nested class
+ * 1. member nested class： 定义在enclosing class 类中，拥有类的属性； （public,private, protected, static, final）
+ * 2. local nested class: 定义在enclosing class的方法中，拥有enclosing class、method属性; final
+ * 2. anonymous nested class
+ *
+ * 另外一种分类
+ * 1. static nested class: 用static修饰
+ * 2. inner class: 不能用static修饰
+ *      - inner member class: 没有用static 修饰的成员内部类
+ *      - local inner classes：定义在方法里
+ *      - anonymous inner classes
  */
 public class EnclosingClass {
 

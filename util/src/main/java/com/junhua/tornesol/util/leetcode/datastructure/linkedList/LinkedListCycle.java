@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.linkedList;
+package com.junhua.tornesol.util.leetcode.datastructure.linkedList;
 
 public class LinkedListCycle {
 

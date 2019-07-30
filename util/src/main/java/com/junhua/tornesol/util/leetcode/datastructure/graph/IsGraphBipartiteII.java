@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.graph;
+package com.junhua.tornesol.util.leetcode.datastructure.graph;
 
 import java.util.LinkedList;
 import java.util.Queue;

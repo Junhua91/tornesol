@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.link;
+package com.junhua.tornesol.util.leetcode.datastructure.link;
 
 
 class SwapNodeInPairs {

@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.jdk.comparator;
+package com.junhua.tornesol.effective.jdk.comparator;
 
 /**
  * 1. Comparable: 对内

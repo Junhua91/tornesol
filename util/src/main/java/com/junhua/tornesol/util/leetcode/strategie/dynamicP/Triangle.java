@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.dynamicP;
+package com.junhua.tornesol.util.leetcode.strategie.dynamicP;
 
 import java.util.ArrayList;
 import java.util.Arrays;

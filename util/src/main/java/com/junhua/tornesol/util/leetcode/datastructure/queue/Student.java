@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.queue;
+package com.junhua.tornesol.util.leetcode.datastructure.queue;
 
 
 public class Student implements Comparable {

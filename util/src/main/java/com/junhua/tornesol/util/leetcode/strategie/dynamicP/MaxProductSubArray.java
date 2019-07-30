@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.dynamicP;
+package com.junhua.tornesol.util.leetcode.strategie.dynamicP;
 
 public class MaxProductSubArray {
 

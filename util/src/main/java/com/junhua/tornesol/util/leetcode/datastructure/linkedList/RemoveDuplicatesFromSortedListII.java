@@ -1,7 +1,4 @@
-package com.junhua.tornesol.util.leetcode.linkedList;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.junhua.tornesol.util.leetcode.datastructure.linkedList;
 
 public class RemoveDuplicatesFromSortedListII {
 

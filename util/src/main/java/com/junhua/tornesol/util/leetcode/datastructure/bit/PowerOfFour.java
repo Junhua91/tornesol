@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.bit;
+package com.junhua.tornesol.util.leetcode.datastructure.bit;
 
 public class PowerOfFour {
 

@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.dynamicP;
+package com.junhua.tornesol.util.leetcode.strategie.dynamicP;
 
 /**
  * On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).

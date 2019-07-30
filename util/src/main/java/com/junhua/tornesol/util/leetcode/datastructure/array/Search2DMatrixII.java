@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.array;
+package com.junhua.tornesol.util.leetcode.datastructure.array;
 
 public class Search2DMatrixII {
 

@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.queue;
+package com.junhua.tornesol.util.leetcode.datastructure.queue;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

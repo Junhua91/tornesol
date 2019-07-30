@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.recursion;
+package com.junhua.tornesol.util.leetcode.strategie.recursion;
 
 import java.util.ArrayList;
 import java.util.List;

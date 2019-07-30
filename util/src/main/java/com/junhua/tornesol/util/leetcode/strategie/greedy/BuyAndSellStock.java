@@ -1,4 +1,4 @@
-package com.junhua.tornesol.util.leetcode.greedy;
+package com.junhua.tornesol.util.leetcode.strategie.greedy;
 
 public class BuyAndSellStock {
 

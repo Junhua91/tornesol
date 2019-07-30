@@ -1,6 +1,6 @@
 package com.junhua.tornesol.effective.classandinterface.nested;
 
-public class NestedTest {
+public class StaticNestedTest {
 
 
     public static void main(String[] args) {

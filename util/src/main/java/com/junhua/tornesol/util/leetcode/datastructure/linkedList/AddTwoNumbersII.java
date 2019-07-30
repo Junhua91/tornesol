@@ -1,6 +1,5 @@
-package com.junhua.tornesol.util.leetcode.linkedList;
+package com.junhua.tornesol.util.leetcode.datastructure.linkedList;
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class AddTwoNumbersII {
