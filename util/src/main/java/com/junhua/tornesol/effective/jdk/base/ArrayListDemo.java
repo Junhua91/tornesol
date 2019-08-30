@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ArrayListDemo {
 
@@ -14,6 +16,7 @@ public class ArrayListDemo {
 //        modCount();
 
         serialize();
+        subList();
     }
 
 
@@ -70,6 +73,14 @@ public class ArrayListDemo {
         }
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("writeObject.txt"));
         oos.writeObject(list);
+    }
+
+    public static void subList() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+
+        List res = list.subList(0, 20);
+        List res2 = list.subList(0, 5);
+        return;
     }
 
 }

@@ -16,5 +16,8 @@
         <module>mybatis</module>
         <module>springBoot</module>
         <module>mySpring</module>
+        <module>mybatis-spring</module>
+        <module>tdk-service</module>
+        <module>tdk-api</module>
     </modules>
 </project>

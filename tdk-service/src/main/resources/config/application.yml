@@ -1,0 +1,117 @@
+server:
+  port: 8081
+redis:
+  main:
+    host: 192.168.1.175
+    port: 6381
+    password: 'jredis123456'
+    db: 9
+    max_total: 200 #最大连接数
+    min_idle: 20 #最小空闲连接数
+    timeout: 60000 #最大等待时间
+  webgroup:
+    host: 192.168.1.175
+    port: 6381
+    password: 'jredis123456'
+    db: 0
+    max_total: 200 #最大连接数
+    min_idle: 20 #最小空闲连接数
+    timeout: 60000 #最大等待时间
+db:
+  ops:
+    encoding: utf8
+    database: ops
+    username: naliworld
+    password: 'password!'
+    host: 192.168.3.161
+  webgroup:
+    encoding: utf8
+    database: web_group
+    username: naliworld
+    password: 'password!'
+    host: 192.168.1.161
+  local:
+    database: employees
+    username: root
+    password: root
+    host: localhost
+mainstay:
+  scatterGather: false
+  timeout: 12000
+  routingType: roundrobin
+  zookeeper:
+    connectString: "192.168.60.12:2181,192.168.60.25:2181,192.168.60.26:2181,192.168.60.37:2181,192.168.60.38:2181,192.168.60.39:2181,192.168.60.40:2181"
+    timeout:
+      session: 2000
+      connection: 2000
+    digest:
+  webConsole:
+    url: http://192.168.1.175:8081/mainstay-backend
+  services:
+    album:
+      serviceGroup: album
+      isMultiplex: false
+    track:
+      serviceGroup: track
+      isMultiplex: false
+    profile:
+      serviceGroup: profile-proxy
+      isMultiplex: true
+    sso:
+      serviceGroup: passport-sso
+      isMultiplex: false
+    discovery:
+      serviceGroup: discovery-service
+      isMultiplex: true
+    statCount:
+      serviceGroup: stat-count
+      isMultiplex: false
+      timeout: 200
+    subscribe:
+      serviceGroup: subscribe
+    recsys:
+      isMultiplex: false
+      recommend:
+        serviceGroup: recommend-album
+      relative:
+        serviceGroup: relative-album
+    payableProduct:
+      serviceGroup: payable-product
+      isMultiplex: true
+    albumComment:
+      serviceGroup: album_comment
+      isMultiplex: false
+    businessMembership:
+      serviceGroup: business-membership-test
+      isMultiplex: true
+    elasticdb:
+      serviceGroup: business-elasticdb
+      isMultiplex: false
+    account:
+      serviceGroup: xima-account-test
+      isMultiplex: true
+    passport:
+      serviceGroup: passport-service
+      isMultiplex: true
+    payableOrder:
+      serviceGroup: payable-order
+      isMultiplex: true
+    coupon:
+      serviceGroup: ad-coupon-rpc
+      isMultiplex: false
+    util:
+      serviceGroup: web-util-m3
+      isMultiplex: false
+    topic:
+      serviceGroup: search-front-product
+      isMultiplex: false
+    searchFrontService:
+      serviceGroup: search-front-product
+      isMultiplex: true
+thrift:
+  timeout: 12000
+  connectionPool:
+    maxTotal: 10
+    minIdle: 10
+    maxIdle: 10
+
