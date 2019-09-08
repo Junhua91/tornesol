@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
     <Resource
-            name="jdbc/mysql"
+            name="com.junhua.mybatis.jdbc/mysql"
             auth="Container"
             type="javax.sql.DataSource"
             maxActive="100"
@@ -9,6 +9,6 @@
             maxWait="10000"
             username="root"
             password="root"
-            driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://localhost:3306/tournesol"/>
+            driverClassName="com.mysql.com.junhua.mybatis.jdbc.Driver"
+            url="com.junhua.mybatis.jdbc:mysql://localhost:3306/tournesol"/>
 </Context>

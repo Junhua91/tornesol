@@ -351,7 +351,7 @@ jQuery.extend( {
 		}
 	},
 
-	// Convert dashed to camelCase; used by the css and data modules
+	// Convert dashed to camelCase; used by the css and com.junhua.mybatis.data modules
 	// Microsoft forgot to hump their vendor prefix (#9572)
 	camelCase: function( string ) {
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
@@ -611,7 +611,7 @@ var i,
 	matches,
 	contains,
 
-	// Instance-specific data
+	// Instance-specific com.junhua.mybatis.data
 	expando = "sizzle" + 1 * new Date(),
 	preferredDoc = window.document,
 	dirruns = 0,
@@ -905,7 +905,7 @@ function Sizzle( selector, context, results, seed ) {
 
 /**
  * Create key-value caches of limited size
- * @returns {function(string, object)} Returns the Object data after storing it on itself with
+ * @returns {function(string, object)} Returns the Object com.junhua.mybatis.data after storing it on itself with
  *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
  *	deleting the oldest entry
  */
@@ -1752,7 +1752,7 @@ Expr = Sizzle.selectors = {
 
 						start = [ forward ? parent.firstChild : parent.lastChild ];
 
-						// non-xml :nth-child(...) stores cache data on `parent`
+						// non-xml :nth-child(...) stores cache com.junhua.mybatis.data on `parent`
 						if ( forward && useCache ) {
 
 							// Seek `elem` from a previously-cached index
@@ -1842,7 +1842,7 @@ Expr = Sizzle.selectors = {
 		"PSEUDO": function( pseudo, argument ) {
 			// pseudo-class names are case-insensitive
 			// http://www.w3.org/TR/selectors/#pseudo-classes
-			// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
+			// Prioritize by case sensitivity in case com.junhua.mybatis.custom pseudos are added with uppercase letters
 			// Remember that setFilters inherits from pseudos
 			var args,
 				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
@@ -2191,7 +2191,7 @@ function addCombinator( matcher, combinator, base ) {
 			var oldCache, uniqueCache, outerCache,
 				newCache = [ dirruns, doneName ];
 
-			// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
+			// We can't set arbitrary com.junhua.mybatis.data on XML nodes, so they don't benefit from combinator caching
 			if ( xml ) {
 				while ( (elem = elem[ dir ]) ) {
 					if ( elem.nodeType === 1 || checkNonElements ) {
@@ -3209,7 +3209,7 @@ jQuery.Callbacks = function( options ) {
 		// Actual callback list
 		list = [],
 
-		// Queue of execution data for repeatable lists
+		// Queue of execution com.junhua.mybatis.data for repeatable lists
 		queue = [],
 
 		// Index of currently firing callback (modified by add/remove as needed)
@@ -3232,14 +3232,14 @@ jQuery.Callbacks = function( options ) {
 					if ( list[ firingIndex ].apply( memory[ 0 ], memory[ 1 ] ) === false &&
 						options.stopOnFalse ) {
 
-						// Jump to end and forget the data so .add doesn't re-fire
+						// Jump to end and forget the com.junhua.mybatis.data so .add doesn't re-fire
 						firingIndex = list.length;
 						memory = false;
 					}
 				}
 			}
 
-			// Forget the data if we're done with it
+			// Forget the com.junhua.mybatis.data if we're done with it
 			if ( !options.memory ) {
 				memory = false;
 			}
@@ -3249,7 +3249,7 @@ jQuery.Callbacks = function( options ) {
 			// Clean up if we're done firing for good
 			if ( locked ) {
 
-				// Keep an empty list if we have data for future add calls
+				// Keep an empty list if we have com.junhua.mybatis.data for future add calls
 				if ( memory ) {
 					list = [];
 
@@ -3642,7 +3642,7 @@ jQuery.ready.promise = function( obj ) {
 			// A fallback to window.onload, that will always work
 			window.addEventListener( "load", completed );
 
-		// If IE event model is used
+		// If IE event com.junhua.mybatis.model is used
 		} else {
 
 			// Ensure firing before onload, maybe late but safe also for iframes
@@ -3762,11 +3762,11 @@ var acceptData = function( elem ) {
 	var noData = jQuery.noData[ ( elem.nodeName + " " ).toLowerCase() ],
 		nodeType = +elem.nodeType || 1;
 
-	// Do not set data on non-element DOM nodes because it will not be cleared (#8335).
+	// Do not set com.junhua.mybatis.data on non-element DOM nodes because it will not be cleared (#8335).
 	return nodeType !== 1 && nodeType !== 9 ?
 		false :
 
-		// Nodes accept data unless otherwise specified; rejection can be conditional
+		// Nodes accept com.junhua.mybatis.data unless otherwise specified; rejection can be conditional
 		!noData || noData !== true && elem.getAttribute( "classid" ) === noData;
 };
 
@@ -3779,10 +3779,10 @@ var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
 function dataAttr( elem, key, data ) {
 
 	// If nothing was found internally, try to fetch any
-	// data from the HTML5 data-* attribute
+	// com.junhua.mybatis.data from the HTML5 com.junhua.mybatis.data-* attribute
 	if ( data === undefined && elem.nodeType === 1 ) {
 
-		var name = "data-" + key.replace( rmultiDash, "-$1" ).toLowerCase();
+		var name = "com.junhua.mybatis.data-" + key.replace( rmultiDash, "-$1" ).toLowerCase();
 
 		data = elem.getAttribute( name );
 
@@ -3798,7 +3798,7 @@ function dataAttr( elem, key, data ) {
 					data;
 			} catch ( e ) {}
 
-			// Make sure we set the data so it isn't changed later
+			// Make sure we set the com.junhua.mybatis.data so it isn't changed later
 			jQuery.data( elem, key, data );
 
 		} else {
@@ -3814,7 +3814,7 @@ function isEmptyDataObject( obj ) {
 	var name;
 	for ( name in obj ) {
 
-		// if the public data object is empty, the private is still empty
+		// if the public com.junhua.mybatis.data object is empty, the private is still empty
 		if ( name === "data" && jQuery.isEmptyObject( obj[ name ] ) ) {
 			continue;
 		}
@@ -3838,7 +3838,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 		// can't GC object references properly across the DOM-JS boundary
 		isNode = elem.nodeType,
 
-		// Only DOM nodes need the global jQuery cache; JS object data is
+		// Only DOM nodes need the global jQuery cache; JS object com.junhua.mybatis.data is
 		// attached directly to the object so GC can occur automatically
 		cache = isNode ? jQuery.cache : elem,
 
@@ -3846,16 +3846,16 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 		// the code to shortcut on the same path as a DOM node with no cache
 		id = isNode ? elem[ internalKey ] : elem[ internalKey ] && internalKey;
 
-	// Avoid doing any more work than we need to when trying to get data on an
-	// object that has no data at all
-	if ( ( !id || !cache[ id ] || ( !pvt && !cache[ id ].data ) ) &&
+	// Avoid doing any more work than we need to when trying to get com.junhua.mybatis.data on an
+	// object that has no com.junhua.mybatis.data at all
+	if ( ( !id || !cache[ id ] || ( !pvt && !cache[ id ].mapper ) ) &&
 		data === undefined && typeof name === "string" ) {
 		return;
 	}
 
 	if ( !id ) {
 
-		// Only DOM nodes need a new unique ID for each element since their data
+		// Only DOM nodes need a new unique ID for each element since their com.junhua.mybatis.data
 		// ends up in the global cache
 		if ( isNode ) {
 			id = elem[ internalKey ] = deletedIds.pop() || jQuery.guid++;
@@ -3871,21 +3871,21 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 		cache[ id ] = isNode ? {} : { toJSON: jQuery.noop };
 	}
 
-	// An object can be passed to jQuery.data instead of a key/value pair; this gets
+	// An object can be passed to jQuery.com.junhua.mybatis.data instead of a key/value pair; this gets
 	// shallow copied over onto the existing cache
 	if ( typeof name === "object" || typeof name === "function" ) {
 		if ( pvt ) {
 			cache[ id ] = jQuery.extend( cache[ id ], name );
 		} else {
-			cache[ id ].data = jQuery.extend( cache[ id ].data, name );
+			cache[ id ].data = jQuery.extend( cache[ id ].mapper, name );
 		}
 	}
 
 	thisCache = cache[ id ];
 
-	// jQuery data() is stored in a separate object inside the object's internal data
-	// cache in order to avoid key collisions between internal data and user-defined
-	// data.
+	// jQuery com.junhua.mybatis.data() is stored in a separate object inside the object's internal com.junhua.mybatis.data
+	// cache in order to avoid key collisions between internal com.junhua.mybatis.data and user-defined
+	// com.junhua.mybatis.data.
 	if ( !pvt ) {
 		if ( !thisCache.data ) {
 			thisCache.data = {};
@@ -3898,14 +3898,14 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 		thisCache[ jQuery.camelCase( name ) ] = data;
 	}
 
-	// Check for both converted-to-camel and non-converted data property names
-	// If a data property was specified
+	// Check for both converted-to-camel and non-converted com.junhua.mybatis.data property names
+	// If a com.junhua.mybatis.data property was specified
 	if ( typeof name === "string" ) {
 
-		// First Try to find as-is property data
+		// First Try to find as-is property com.junhua.mybatis.data
 		ret = thisCache[ name ];
 
-		// Test for null|undefined property data
+		// Test for null|undefined property com.junhua.mybatis.data
 		if ( ret == null ) {
 
 			// Try to find the camelCased property
@@ -3926,7 +3926,7 @@ function internalRemoveData( elem, name, pvt ) {
 	var thisCache, i,
 		isNode = elem.nodeType,
 
-		// See jQuery.data for more information
+		// See jQuery.com.junhua.mybatis.data for more information
 		cache = isNode ? jQuery.cache : elem,
 		id = isNode ? elem[ jQuery.expando ] : jQuery.expando;
 
@@ -3938,11 +3938,11 @@ function internalRemoveData( elem, name, pvt ) {
 
 	if ( name ) {
 
-		thisCache = pvt ? cache[ id ] : cache[ id ].data;
+		thisCache = pvt ? cache[ id ] : cache[ id ].mapper;
 
 		if ( thisCache ) {
 
-			// Support array or space separated string names for data keys
+			// Support array or space separated string names for com.junhua.mybatis.data keys
 			if ( !jQuery.isArray( name ) ) {
 
 				// try the string as a key before any manipulation
@@ -3961,7 +3961,7 @@ function internalRemoveData( elem, name, pvt ) {
 			} else {
 
 				// If "name" is an array of keys...
-				// When data is initially created, via ("key", "val") signature,
+				// When com.junhua.mybatis.data is initially created, via ("key", "val") signature,
 				// keys will be converted to camelCase.
 				// Since there is no way to tell _how_ a key was added, remove
 				// both plain key and camelCase key. #12786
@@ -3974,7 +3974,7 @@ function internalRemoveData( elem, name, pvt ) {
 				delete thisCache[ name[ i ] ];
 			}
 
-			// If there is no data left in the cache, we want to continue
+			// If there is no com.junhua.mybatis.data left in the cache, we want to continue
 			// and let the cache object itself get destroyed
 			if ( pvt ? !isEmptyDataObject( thisCache ) : !jQuery.isEmptyObject( thisCache ) ) {
 				return;
@@ -3982,11 +3982,11 @@ function internalRemoveData( elem, name, pvt ) {
 		}
 	}
 
-	// See jQuery.data for more information
+	// See jQuery.com.junhua.mybatis.data for more information
 	if ( !pvt ) {
-		delete cache[ id ].data;
+		delete cache[ id ].mapper;
 
-		// Don't destroy the parent cache unless the internal data object
+		// Don't destroy the parent cache unless the internal com.junhua.mybatis.data object
 		// had been the only thing left in it
 		if ( !isEmptyDataObject( cache[ id ] ) ) {
 			return;
@@ -4051,7 +4051,7 @@ jQuery.fn.extend( {
 			elem = this[ 0 ],
 			attrs = elem && elem.attributes;
 
-		// Special expections of .data basically thwart jQuery.access,
+		// Special expections of .com.junhua.mybatis.data basically thwart jQuery.access,
 		// so implement the relevant behavior ourselves
 
 		// Gets all values
@@ -4067,7 +4067,7 @@ jQuery.fn.extend( {
 						// The attrs elements can be null (#14894)
 						if ( attrs[ i ] ) {
 							name = attrs[ i ].name;
-							if ( name.indexOf( "data-" ) === 0 ) {
+							if ( name.indexOf( "com.junhua.mybatis.data-" ) === 0 ) {
 								name = jQuery.camelCase( name.slice( 5 ) );
 								dataAttr( elem, name, data[ name ] );
 							}
@@ -4095,7 +4095,7 @@ jQuery.fn.extend( {
 			} ) :
 
 			// Gets one value
-			// Try to fetch any internally stored data first
+			// Try to fetch any internally stored com.junhua.mybatis.data first
 			elem ? dataAttr( elem, key, jQuery.data( elem, key ) ) : undefined;
 	},
 
@@ -4435,7 +4435,7 @@ var rscriptType = ( /^$|\/(?:java|ecma)script/i );
 
 var rleadingWhitespace = ( /^\s+/ );
 
-var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|" +
+var nodeNames = "abbr|article|aside|audio|bdi|canvas|com.junhua.mybatis.data|datalist|" +
 		"details|dialog|figcaption|figure|footer|header|hgroup|main|" +
 		"mark|meter|nav|output|picture|progress|section|summary|template|time|video";
 
@@ -4778,10 +4778,10 @@ function on( elem, types, selector, data, fn, one ) {
 	// Types can be a map of types/handlers
 	if ( typeof types === "object" ) {
 
-		// ( types-Object, selector, data )
+		// ( types-Object, selector, com.junhua.mybatis.data )
 		if ( typeof selector !== "string" ) {
 
-			// ( types-Object, data )
+			// ( types-Object, com.junhua.mybatis.data )
 			data = data || selector;
 			selector = undefined;
 		}
@@ -4804,7 +4804,7 @@ function on( elem, types, selector, data, fn, one ) {
 			data = undefined;
 		} else {
 
-			// ( types, data, fn )
+			// ( types, com.junhua.mybatis.data, fn )
 			fn = data;
 			data = selector;
 			selector = undefined;
@@ -4852,7 +4852,7 @@ jQuery.event = {
 			return;
 		}
 
-		// Caller can pass in an object of custom data in lieu of the handler
+		// Caller can pass in an object of com.junhua.mybatis.custom com.junhua.mybatis.data in lieu of the handler
 		if ( handler.handler ) {
 			handleObjIn = handler;
 			handler = handleObjIn.handler;
@@ -5084,7 +5084,7 @@ jQuery.event = {
 			event.target = elem;
 		}
 
-		// Clone any incoming data and prepend the event, creating the handler arg list
+		// Clone any incoming com.junhua.mybatis.data and prepend the event, creating the handler arg list
 		data = data == null ?
 			[ event ] :
 			jQuery.makeArray( data, [ event ] );
@@ -5220,7 +5220,7 @@ jQuery.event = {
 				if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
 
 					event.handleObj = handleObj;
-					event.data = handleObj.data;
+					event.data = handleObj.mapper;
 
 					ret = ( ( jQuery.event.special[ handleObj.origType ] || {} ).handle ||
 						handleObj.handler ).apply( matched.elem, args );
@@ -5502,7 +5502,7 @@ jQuery.removeEvent = document.removeEventListener ?
 
 		if ( elem.detachEvent ) {
 
-			// #8545, #7054, preventing memory leaks for custom events in IE6-8
+			// #8545, #7054, preventing memory leaks for com.junhua.mybatis.custom events in IE6-8
 			// detachEvent needed property on element, by name of that event,
 			// to properly expose it to GC
 			if ( typeof elem[ name ] === "undefined" ) {
@@ -5932,7 +5932,7 @@ function cloneCopyEvent( src, dest ) {
 		}
 	}
 
-	// make the cloned public data object a copy from the original
+	// make the cloned public com.junhua.mybatis.data object a copy from the original
 	if ( curData.data ) {
 		curData.data = jQuery.extend( {}, curData.data );
 	}
@@ -5956,7 +5956,7 @@ function fixCloneNodeIssues( src, dest ) {
 			jQuery.removeEvent( dest, e, data.handle );
 		}
 
-		// Event data gets referenced instead of copied if the expando gets copied too
+		// Event com.junhua.mybatis.data gets referenced instead of copied if the expando gets copied too
 		dest.removeAttribute( jQuery.expando );
 	}
 
@@ -6444,7 +6444,7 @@ function actualDisplay( name, doc ) {
 
 		display = jQuery.css( elem[ 0 ], "display" );
 
-	// We don't have any data stored on the element,
+	// We don't have any com.junhua.mybatis.data stored on the element,
 	// so use "detach" method as fast way to get rid of the element
 	elem.detach();
 
@@ -7022,7 +7022,7 @@ function getWidthOrHeight( elem, name, extra ) {
 		val = parseFloat( val ) || 0;
 	}
 
-	// use the active box-sizing model to add/subtract irrelevant styles
+	// use the active box-sizing com.junhua.mybatis.model to add/subtract irrelevant styles
 	return ( val +
 		augmentWidthOrHeight(
 			elem,
@@ -8000,7 +8000,7 @@ jQuery.fn.extend( {
 				timers = jQuery.timers,
 				length = queue ? queue.length : 0;
 
-			// enable finishing flag on private data
+			// enable finishing flag on private com.junhua.mybatis.data
 			data.finish = true;
 
 			// empty the queue first
@@ -8040,7 +8040,7 @@ jQuery.each( [ "toggle", "show", "hide" ], function( i, name ) {
 	};
 } );
 
-// Generate shortcuts for custom animations
+// Generate shortcuts for com.junhua.mybatis.custom animations
 jQuery.each( {
 	slideDown: genFx( "show" ),
 	slideUp: genFx( "hide" ),
@@ -9085,10 +9085,10 @@ var
 	rurl = /^([\w.+-]+:)(?:\/\/(?:[^\/?#]*@|)([^\/?#:]*)(?::(\d+)|)|)/,
 
 	/* Prefilters
-	 * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)
+	 * 1) They are useful to introduce com.junhua.mybatis.custom dataTypes (see ajax/jsonp.js for an example)
 	 * 2) These are called:
 	 *    - BEFORE asking for a transport
-	 *    - AFTER param serialization (s.data is a string if s.processData is true)
+	 *    - AFTER param serialization (s.com.junhua.mybatis.data is a string if s.processData is true)
 	 * 3) key is the dataType
 	 * 4) the catchall symbol "*" can be used
 	 * 5) execution will start with transport dataType and THEN continue down to "*" if needed
@@ -9367,7 +9367,7 @@ jQuery.extend( {
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		/*
 		timeout: 0,
-		data: null,
+		com.junhua.mybatis.data: null,
 		dataType: null,
 		username: null,
 		password: null,
@@ -9415,7 +9415,7 @@ jQuery.extend( {
 		},
 
 		// For options that shouldn't be deep extended:
-		// you can add your own custom options here if
+		// you can add your own com.junhua.mybatis.custom options here if
 		// and when you create one that shouldn't be
 		// deep extended (see ajaxExtend)
 		flatOptions: {
@@ -9607,7 +9607,7 @@ jQuery.extend( {
 			);
 		}
 
-		// Convert data if not already a string
+		// Convert com.junhua.mybatis.data if not already a string
 		if ( s.data && s.processData && typeof s.data !== "string" ) {
 			s.data = jQuery.param( s.data, s.traditional );
 		}
@@ -9642,11 +9642,11 @@ jQuery.extend( {
 		// More options handling for requests with no content
 		if ( !s.hasContent ) {
 
-			// If data is available, append data to url
+			// If com.junhua.mybatis.data is available, append com.junhua.mybatis.data to url
 			if ( s.data ) {
 				cacheURL = ( s.url += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data );
 
-				// #9682: remove data so that it's not used in an eventual retry
+				// #9682: remove com.junhua.mybatis.data so that it's not used in an eventual retry
 				delete s.data;
 			}
 
@@ -9672,7 +9672,7 @@ jQuery.extend( {
 			}
 		}
 
-		// Set the correct header, if data is being sent
+		// Set the correct header, if com.junhua.mybatis.data is being sent
 		if ( s.data && s.hasContent && s.contentType !== false || options.contentType ) {
 			jqXHR.setRequestHeader( "Content-Type", s.contentType );
 		}
@@ -9691,7 +9691,7 @@ jQuery.extend( {
 			jqXHR.setRequestHeader( i, s.headers[ i ] );
 		}
 
-		// Allow custom headers/mimetypes and early abort
+		// Allow com.junhua.mybatis.custom headers/mimetypes and early abort
 		if ( s.beforeSend &&
 			( s.beforeSend.call( callbackContext, jqXHR, s ) === false || state === 2 ) ) {
 
@@ -9780,7 +9780,7 @@ jQuery.extend( {
 			// Determine if successful
 			isSuccess = status >= 200 && status < 300 || status === 304;
 
-			// Get response data
+			// Get response com.junhua.mybatis.data
 			if ( responses ) {
 				response = ajaxHandleResponses( s, jqXHR, responses );
 			}
@@ -9811,7 +9811,7 @@ jQuery.extend( {
 				} else if ( status === 304 ) {
 					statusText = "notmodified";
 
-				// If we have data, let's convert it
+				// If we have com.junhua.mybatis.data, let's convert it
 				} else {
 					statusText = response.state;
 					success = response.data;
@@ -9831,7 +9831,7 @@ jQuery.extend( {
 				}
 			}
 
-			// Set data for the fake xhr object
+			// Set com.junhua.mybatis.data for the fake xhr object
 			jqXHR.status = status;
 			jqXHR.statusText = ( nativeStatusText || statusText ) + "";
 
@@ -9879,7 +9879,7 @@ jQuery.extend( {
 jQuery.each( [ "get", "post" ], function( i, method ) {
 	jQuery[ method ] = function( url, data, callback, type ) {
 
-		// shift arguments if data argument was omitted
+		// shift arguments if com.junhua.mybatis.data argument was omitted
 		if ( jQuery.isFunction( data ) ) {
 			type = type || callback;
 			callback = data;
@@ -10213,7 +10213,7 @@ if ( xhrSupported ) {
 						options.password
 					);
 
-					// Apply custom fields if provided
+					// Apply com.junhua.mybatis.custom fields if provided
 					if ( options.xhrFields ) {
 						for ( i in options.xhrFields ) {
 							xhr[ i ] = options.xhrFields[ i ];
@@ -10251,7 +10251,7 @@ if ( xhrSupported ) {
 					// Do send the request
 					// This may raise an exception which is actually
 					// handled in jQuery.ajax (so no try/catch here)
-					xhr.send( ( options.hasContent && options.data ) || null );
+					xhr.send( ( options.hasContent && options.mapper ) || null );
 
 					// Listener
 					callback = function( _, isAbort ) {
@@ -10275,7 +10275,7 @@ if ( xhrSupported ) {
 								status = xhr.status;
 
 								// Support: IE<10
-								// Accessing binary-data responseText throws an exception
+								// Accessing binary-com.junhua.mybatis.data responseText throws an exception
 								// (#11426)
 								if ( typeof xhr.responseText === "string" ) {
 									responses.text = xhr.responseText;
@@ -10293,8 +10293,8 @@ if ( xhrSupported ) {
 
 								// Filter status for non standard behaviors
 
-								// If the request is local and we have data: assume a success
-								// (success with no data won't get notified, that's the best we
+								// If the request is local and we have com.junhua.mybatis.data: assume a success
+								// (success with no com.junhua.mybatis.data won't get notified, that's the best we
 								// can do given current implementations)
 								if ( !status && options.isLocal && !options.crossDomain ) {
 									status = responses.text ? 200 : 404;
@@ -10468,13 +10468,13 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 	var callbackName, overwritten, responseContainer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
 			"url" :
-			typeof s.data === "string" &&
+			typeof s.mapper === "string" &&
 				( s.contentType || "" )
 					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
-				rjsonp.test( s.data ) && "data"
+				rjsonp.test( s.mapper ) && "data"
 		);
 
-	// Handle iff the expected data type is "jsonp" or we have a parameter to set
+	// Handle iff the expected com.junhua.mybatis.data type is "jsonp" or we have a parameter to set
 	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
 		// Get callback name, remembering preexisting value associated with it
@@ -10482,14 +10482,14 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			s.jsonpCallback() :
 			s.jsonpCallback;
 
-		// Insert callback into url or form data
+		// Insert callback into url or form com.junhua.mybatis.data
 		if ( jsonProp ) {
 			s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
 		} else if ( s.jsonp !== false ) {
 			s.url += ( rquery.test( s.url ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
 		}
 
-		// Use data converter to retrieve json after script execution
+		// Use com.junhua.mybatis.data converter to retrieve json after script execution
 		s.converters[ "script json" ] = function() {
 			if ( !responseContainer ) {
 				jQuery.error( callbackName + " was not called" );
@@ -10544,7 +10544,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 
 
-// data: string of html
+// com.junhua.mybatis.data: string of html
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
 // keepScripts (optional): If true, will include scripts passed in the html string
@@ -10633,7 +10633,7 @@ jQuery.fn.load = function( url, params, callback ) {
 				// Otherwise use the full result
 				responseText );
 
-		// If the request succeeds, this function gets "data", "status", "jqXHR"
+		// If the request succeeds, this function gets "com.junhua.mybatis.data", "status", "jqXHR"
 		// but they are ignored because response was set above.
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {

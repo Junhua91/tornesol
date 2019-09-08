@@ -17,7 +17,7 @@
         <module>springBoot</module>
         <module>mySpring</module>
         <module>mybatis-spring</module>
-        <module>tdk-service</module>
+        <module>tdk-com.junhua.mybatis.service</module>
         <module>tdk-api</module>
     </modules>
 </project>

@@ -9,5 +9,5 @@
         <property name="name" value="test"/>
     </bean>
 
-    <bean id="bService" class="com.junhua.tornesol.service.BService"/>
+    <bean id="bService" class="com.junhua.tornesol.com.junhua.mybatis.service.BService"/>
 </beans>

@@ -24,8 +24,8 @@ public class MainConfig {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         dataSource.setUser("root");
         dataSource.setPassword("root");
-        dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/tournesol");
+        dataSource.setDriverClass("com.mysql.com.junhua.mybatis.jdbc.Driver");
+        dataSource.setJdbcUrl("com.junhua.mybatis.jdbc:mysql://localhost:3306/tournesol");
         return dataSource;
     }
 

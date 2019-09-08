@@ -68,7 +68,7 @@ public class DRpcBeanDefinitionParser implements BeanDefinitionParser {
                     if ("ref".equals(property) && parserContext.getRegistry().containsBeanDefinition(value)) {
                         BeanDefinition refBean = parserContext.getRegistry().getBeanDefinition(value);
                         if (!refBean.isSingleton()) {
-                            throw new IllegalStateException("The exported service ref " + value + " must be singleton! Please set the " + value + " bean scope to singleton, eg: <bean id=\"" + value + "\" scope=\"singleton\" ...>");
+                            throw new IllegalStateException("The exported com.junhua.mybatis.service ref " + value + " must be singleton! Please set the " + value + " bean scope to singleton, eg: <bean id=\"" + value + "\" scope=\"singleton\" ...>");
                         }
                     }
                     reference = new RuntimeBeanReference(value);

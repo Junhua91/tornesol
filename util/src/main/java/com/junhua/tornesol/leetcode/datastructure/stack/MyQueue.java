@@ -8,7 +8,7 @@ class MyQueue {
     private Stack<Integer> outStack;
 
     /**
-     * Initialize your data structure here.
+     * Initialize your com.junhua.mybatis.data structure here.
      */
     public MyQueue() {
         inStack = new Stack();

@@ -5,7 +5,7 @@
   http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
     <!-- redis config -->
-    <bean id="mainJedisConnFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+    <bean id="mainJedisConnFactory" class="org.springframework.com.junhua.mybatis.data.redis.connection.jedis.JedisConnectionFactory">
         <property name="hostName" value="${redis.main.host}" />
         <property name="port" value="${redis.main.port}" />
         <property name="password" value="${redis.main.password}" />
@@ -14,7 +14,7 @@
         <property name="usePool" value="true" />
     </bean>
 
-    <bean id="mainRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+    <bean id="mainRedisTemplate" class="org.springframework.com.junhua.mybatis.data.redis.core.RedisTemplate">
         <property name="connectionFactory" ref="mainJedisConnFactory" />
     </bean>
 </beans>

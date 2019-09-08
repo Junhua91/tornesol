@@ -20,6 +20,6 @@
         </xsd:attribute>
     </xds:complexType>
 
-    <xsd:element name="service" type="service_type"></xsd:element>
+    <xsd:element name="com.junhua.mybatis.service" type="service_type"></xsd:element>
     <xsd:element name="reference" type="reference_type"></xsd:element>
 </xsd:schema>

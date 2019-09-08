@@ -30,7 +30,7 @@ public class Register extends HttpServlet {
             try {
                 Context ctx = new InitialContext();
                 Context envCtx = (Context) ctx.lookup("java:comp/env");
-                DataSource bs = (DataSource) envCtx.lookup("jdbc/mysql");
+                DataSource bs = (DataSource) envCtx.lookup("com.junhua.mybatis.jdbc/mysql");
                 conn = bs.getConnection();
 
                 PreparedStatement st = conn.prepareStatement(

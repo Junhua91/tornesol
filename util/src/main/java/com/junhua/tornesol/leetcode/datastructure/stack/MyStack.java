@@ -8,7 +8,7 @@ class MyStack {
     private Queue<Integer> linkedList;
 
     /**
-     * Initialize your data structure here.
+     * Initialize your com.junhua.mybatis.data structure here.
      */
     public MyStack() {
         linkedList = new LinkedList<>();

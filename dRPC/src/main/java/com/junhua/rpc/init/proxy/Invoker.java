@@ -7,9 +7,9 @@ import com.junhua.rpc.transport.model.Response;
 public interface Invoker<T> {
 
     /**
-     * get service interface.
+     * get com.junhua.mybatis.service interface.
      *
-     * @return service interface.
+     * @return com.junhua.mybatis.service interface.
      */
     Class<T> getInterface();
 

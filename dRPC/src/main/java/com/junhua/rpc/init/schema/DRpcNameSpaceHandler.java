@@ -8,7 +8,7 @@ public class DRpcNameSpaceHandler extends NamespaceHandlerSupport {
 
     @Override
     public void init() {
-        registerBeanDefinitionParser("service", new DRpcBeanDefinitionParser(ServiceBean.class, true));
+        registerBeanDefinitionParser("com.junhua.mybatis.service", new DRpcBeanDefinitionParser(ServiceBean.class, true));
         registerBeanDefinitionParser("reference", new DRpcBeanDefinitionParser(ReferenceBean.class, true));
     }
 }
