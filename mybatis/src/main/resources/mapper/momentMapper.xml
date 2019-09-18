@@ -2,13 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="momentMapper">
+<mapper namespace="com.junhua.mybatis.mapper.MomentMapper">
 
     <select id="selectMoment" resultType="com.junhua.mybatis.model.Moment">
     select authorId,
     content,
     image from moment where _id =#{id}
     </select>
+
+    <insert id="insert" parameterType="com.junhua.mybatis.db.model.MomentDO">
+        insert into moment (authorId,content,image) values (#{moment.authorId},#{moment.content},#{moment.image})
+    </insert>
 
 
 </mapper>

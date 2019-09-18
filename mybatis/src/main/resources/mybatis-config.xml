@@ -5,6 +5,7 @@
 <configuration>
     <environments default="development">
         <environment id="development">
+            <!--JDBC事务-->
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
@@ -16,6 +17,5 @@
     </environments>
     <mappers>
         <mapper resource="mapper/momentMapper.xml"/>
-        <mapper resource="mapper/moment-mapper2.xml"/>
     </mappers>
 </configuration>

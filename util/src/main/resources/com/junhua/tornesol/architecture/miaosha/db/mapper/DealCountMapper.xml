@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junhua.tornesol.architecture.miaosha.db.mapper.DealCountMapper">
+
+    <select id="getRestDealCount" resultType="java.lang.Integer">
+        select total_count from tb_miaosha_total_count where deal_id = #{dealId} for update
+    </select>
+
+    <update id="addDealCount">
+        update tb_miaosha_total_count set total_count = #{newCount}
+        where deal_id = #{dealId}
+    </update>
+
+
+    <update id="updateDealCount">
+        update tb_miaosha_total_count set total_count = #{newCount}
+        where deal_id = #{dealId}
+        and total_count = #{oldCount}
+    </update>
+</mapper>
