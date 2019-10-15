@@ -1,7 +1,7 @@
 package com.junhua.tornesol.algorithm.link;
 
 import com.junhua.tornesol.algorithm.sort.SortUtils;
-import com.junhua.tornesol.leetcode.datastructure.linkedList.ListNode;
+import com.junhua.tornesol.algorithm.leetcode.datastructure.linkedList.ListNode;
 
 public class PartitionLinkedList {
 

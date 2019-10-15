@@ -1,7 +1,7 @@
 package com.junhua.tornesol.algorithm.link;
 
 
-import com.junhua.tornesol.leetcode.datastructure.linkedList.ListNode;
+import com.junhua.tornesol.algorithm.leetcode.datastructure.linkedList.ListNode;
 
 /**
  * 打印两个有序链表的公共部分

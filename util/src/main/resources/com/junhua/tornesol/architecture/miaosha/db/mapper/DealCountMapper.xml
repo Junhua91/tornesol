@@ -5,7 +5,7 @@
 <mapper namespace="com.junhua.tornesol.architecture.miaosha.db.mapper.DealCountMapper">
 
     <select id="getRestDealCount" resultType="java.lang.Integer">
-        select total_count from tb_miaosha_total_count where deal_id = #{dealId} for update
+        select total_count from tb_miaosha_total_count where deal_id = #{dealId}
     </select>
 
     <update id="addDealCount">
@@ -17,6 +17,6 @@
     <update id="updateDealCount">
         update tb_miaosha_total_count set total_count = #{newCount}
         where deal_id = #{dealId}
-        and total_count = #{oldCount}
-    </update>
+/*        and total_count = #{oldCount}
+*/    </update>
 </mapper>

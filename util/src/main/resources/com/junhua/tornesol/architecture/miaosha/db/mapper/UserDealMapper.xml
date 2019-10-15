@@ -13,6 +13,10 @@
     <insert id="insert" parameterType="com.junhua.tornesol.architecture.miaosha.db.model.UserDealDO">
         insert into tb_miaosha_user_deal (user_id,deal_id,buy_count)
         values (#{userDeal.userId},#{userDeal.dealId},#{userDeal.buyCount})
+        on duplicate key update
+        user_id = values(user_id),
+        deal_id = values(deal_id),
+        buy_count = values(buy_count)
     </insert>
 
     <select id="getCountSum" resultType="java.lang.Integer">

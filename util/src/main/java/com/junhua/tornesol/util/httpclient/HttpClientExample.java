@@ -9,9 +9,9 @@ public class HttpClientExample {
 
 
     public static void main(String[] args) throws IOException {
-        String BAIDU_MIP_PUSH_URL = "http://data.zz.baidu.com/urls?appid=1577215662899670&token=9T5FFiRQ8TzB3FcF&type=realtime";
+        String BAIDU_MIP_PUSH_URL = "https://www.ximalaya.com/revision/rank/v2/element/code?typeCode=free&clusterCode=all";
         Client client = new Client();
-        System.out.println(client.post(BAIDU_MIP_PUSH_URL, client.responseHandler));
+        System.out.println(client.get(BAIDU_MIP_PUSH_URL, client.responseHandler));
     }
 
 }

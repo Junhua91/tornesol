@@ -1,0 +1,11 @@
+redis:
+  host: localhost
+  port: 6379
+  database: 0
+  password: jredis123456
+  #连接池的最大数据库连接数。设为0表示无限制
+  maxActive: 600
+  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+  maxWait: 1000
+  maxIdle: 300
+  timeout: 1000

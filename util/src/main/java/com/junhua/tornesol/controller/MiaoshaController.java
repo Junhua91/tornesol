@@ -4,6 +4,8 @@ package com.junhua.tornesol.controller;
 import com.junhua.tornesol.architecture.miaosha.db.mapper.UserDealMapper;
 import com.junhua.tornesol.architecture.miaosha.db.model.UserDealDO;
 import com.junhua.tornesol.architecture.miaosha.service.DealCountService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,8 @@ public class MiaoshaController {
     private UserDealMapper userDealMapper = null;
     @Autowired
     private DealCountService dealCountService;
+
+    private Logger LOG = LoggerFactory.getLogger(MiaoshaController.class);
 
     @RequestMapping(path = "miaosha/getCount", method = RequestMethod.GET)
     public int getBuyCount(int userId, int dealId) {
@@ -32,10 +36,12 @@ public class MiaoshaController {
         userDealDO.setBuyCount(buyCount);
         userDealDO.setDealId(dealId);
         userDealDO.setUserId(userId);
+        LOG.info("miaosha start");
         try {
-            dealCountService.buy3(userDealDO);
+            dealCountService.buy(userDealDO);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }
