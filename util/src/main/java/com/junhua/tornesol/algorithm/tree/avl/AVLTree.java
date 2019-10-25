@@ -3,9 +3,9 @@ package com.junhua.tornesol.algorithm.tree.avl;
 
 /**
  * Not implemented by zuochengyun
- *
+ * <p>
  * AVL tree implementation.
- *
+ * <p>
  * In computer science, an AVL tree is a self-balancing binary search tree, and
  * it was the first such data structure to be invented.[1] In an AVL tree, the
  * heights of the two child subtrees of any node differ by at most one. Lookup,
@@ -16,25 +16,24 @@ package com.junhua.tornesol.algorithm.tree.avl;
  *
  * @author Ignas Lelys
  * @created Jun 28, 2011
- *
  */
 public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
 
     /**
-     *
-     *      AVL tree insert method also balances tree if needed. Additional
-     *      height parameter on node is used to track if one subtree is higher
-     *      than other by more than one, if so AVL tree rotations is performed
-     *      to regain balance of the tree.
+     * AVL tree insert method also balances tree if needed. Additional
+     * height parameter on node is used to track if one subtree is higher
+     * than other by more than one, if so AVL tree rotations is performed
+     * to regain balance of the tree.
      */
     @Override
     public Node insert(int element) {
         Node newNode = super.insert(element);
-        rebalance((AVLNode)newNode);
+        rebalance((AVLNode) newNode);
         return newNode;
     }
 
     /**
+     *
      */
     @Override
     public Node delete(int element) {
@@ -43,12 +42,12 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
             Node successorNode = super.delete(deleteNode);
             if (successorNode != null) {
                 // if replaced from getMinimum(deleteNode.right) then come back there and update heights
-                AVLNode minimum = successorNode.right != null ? (AVLNode)getMinimum(successorNode.right) : (AVLNode)successorNode;
+                AVLNode minimum = successorNode.right != null ? (AVLNode) getMinimum(successorNode.right) : (AVLNode) successorNode;
                 recomputeHeight(minimum);
-                rebalance((AVLNode)minimum);
+                rebalance((AVLNode) minimum);
             } else {
-                recomputeHeight((AVLNode)deleteNode.parent);
-                rebalance((AVLNode)deleteNode.parent);
+                recomputeHeight((AVLNode) deleteNode.parent);
+                rebalance((AVLNode) deleteNode.parent);
             }
             return successorNode;
         }
@@ -56,6 +55,7 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
     }
 
     /**
+     *
      */
     @Override
     protected Node createNode(int value, Node parent, Node left, Node right) {
@@ -78,26 +78,26 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
             int nodeBalance = rightHeight - leftHeight;
             // rebalance (-2 means left subtree outgrow, 2 means right subtree)
             if (nodeBalance == 2) {
-                if (node.right.right != null) {
-                    node = (AVLNode)avlRotateLeft(node);
-                    break;
+                if (node.right.right != null) {//并不能判断为RR
+                    node = (AVLNode) avlRotateLeft(node);
+//                    break;
                 } else {
-                    node = (AVLNode)doubleRotateRightLeft(node);
-                    break;
+                    node = (AVLNode) doubleRotateRightLeft(node);
+//                    break;
                 }
             } else if (nodeBalance == -2) {
-                if (node.left.left != null) {
-                    node = (AVLNode)avlRotateRight(node);
-                    break;
+                if (node.left.left != null) {//并不能判断为LL
+                    node = (AVLNode) avlRotateRight(node);
+//                    break;
                 } else {
-                    node = (AVLNode)doubleRotateLeftRight(node);
-                    break;
+                    node = (AVLNode) doubleRotateLeftRight(node);
+//                    break;
                 }
             } else {
                 updateHeight(node);
             }
 
-            node = (AVLNode)parent;
+            node = (AVLNode) parent;
         }
     }
 
@@ -107,8 +107,8 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
     private Node avlRotateLeft(Node node) {
         Node temp = super.rotateLeft(node);
 
-        updateHeight((AVLNode)temp.left);
-        updateHeight((AVLNode)temp);
+        updateHeight((AVLNode) temp.left);
+        updateHeight((AVLNode) temp);
         return temp;
     }
 
@@ -118,8 +118,8 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
     private Node avlRotateRight(Node node) {
         Node temp = super.rotateRight(node);
 
-        updateHeight((AVLNode)temp.right);
-        updateHeight((AVLNode)temp);
+        updateHeight((AVLNode) temp.right);
+        updateHeight((AVLNode) temp);
         return temp;
     }
 
@@ -146,8 +146,8 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
      */
     private void recomputeHeight(AVLNode node) {
         while (node != null) {
-            node.height = maxHeight((AVLNode)node.left, (AVLNode)node.right) + 1;
-            node = (AVLNode)node.parent;
+            node.height = maxHeight((AVLNode) node.left, (AVLNode) node.right) + 1;
+            node = (AVLNode) node.parent;
         }
     }
 
@@ -184,7 +184,6 @@ public class AVLTree extends AbstractSelfBalancingBinarySearchTree {
      *
      * @author Ignas Lelys
      * @created Jun 30, 2011
-     *
      */
     protected static class AVLNode extends Node {
         public int height;

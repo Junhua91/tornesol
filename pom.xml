@@ -20,11 +20,8 @@
         <module>auto-crud</module>
         <module>web-http</module>
         <module>web-mustache</module>
+        <module>jdk7</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
 
 </project>
