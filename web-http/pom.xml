@@ -11,6 +11,10 @@
 
     <artifactId>web-http</artifactId>
 
+    <properties>
+        <mave
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
