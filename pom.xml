@@ -22,6 +22,8 @@
         <module>web-mustache</module>
         <module>jdk7</module>
         <module>tomcat-study</module>
+        <module>algo-study</module>
+        <module>web-sitemap</module>
     </modules>
 
 
